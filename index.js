@@ -15,6 +15,10 @@ app.use(express.json());
 // Connect DB
 connectDB();
 
+app.get("/", (req, res) => {
+  res.send("Admin backend is running");
+});
+
 // Use routes
 app.use("/", fixtureRoutes);
 app.use("/", resultRoutes);
