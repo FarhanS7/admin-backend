@@ -7,6 +7,7 @@ const connectDB = require("./db");
 // Routes
 const fixtureRoutes = require("./routes/fixtureRoutes");
 const resultRoutes = require("./routes/resultRoutes");
+const goalRoutes = require("./routes/goalroutes");
 
 const app = express();
 app.use(cors());
@@ -22,7 +23,7 @@ app.get("/", (req, res) => {
 // Use routes
 app.use("/", fixtureRoutes);
 app.use("/", resultRoutes);
-
+app.use("/", goalRoutes);
 app.listen(5001, () => {
   console.log("Admin backend running on http://localhost:5001");
 });
